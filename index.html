@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        table{
+            height: 50vh;
+            width: 50%;
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            display:flex;
+            flex-wrap: wrap;
+        }
+        div{
+            width: 20px;
+            height: 20px;
+            border: .5px solid black;
+        }
+    </style>
+    <script>
+        // на нажатие
+        function randomColor(){
+            return '#' + Math.ceil(Math.random()*1000000)
+        }
+        for(var i = 0; i < 15000; i++){
+            const div = document.createElement("div");
+            document.body.prepend(div);
+        }
+        // let selectedDiv;
+        // document.body.onclick = function(event){
+            
+        //     if(event.target.tagName != 'DIV') return 
+        //     highlight(event.target);
+        // }
+
+        // function highlight(div){
+        //     selectedDiv = div;
+        //     event.target.style.backgroundColor = randomColor()
+        // }
+        
+
+        // проводить курсором
+
+        document.body.addEventListener('mouseover', (event)=>{
+            if(event.target.tagName = 'DIV'){
+                event.target.style.backgroundColor = randomColor()
+            }
+            if(event.target.tagName !='DIV'){
+                event.target.style.backgroundColor = 'white'
+            }
+        })
+        const table = document.createElement('table')
+        document.body.appendChild(table)
+        for(let i = 0; i < 5; i++){
+            const tr = document.createElement('tr')
+            table.appendChild(tr)
+            for(let i = 0; i<6; i++){
+                const td = document.createElement('td');
+                tr.appendChild(td)
+            }
+        }
+        const button = document.createElement('button')
+        tr.classList.add('header') 
+        header = document.querySelector('.header')
+        header.forEachChild( e =>{
+            for(let i = 0; i < tr.length; i++){
+               col.textContent = col+i
+            }
+            
+        })
+        table.setAttribute('border','1px solid black')
+        table.setAttribute('cellspacing','0')
+        table.setAttribute('cellpadding','0')
+     </script>
+</body>
+</html>
